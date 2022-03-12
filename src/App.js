@@ -48,7 +48,10 @@ function Dashboard() {
 
   useEffect(() => {
     dispatch(themeActions.dark());
-    dispatch(userActions.login({ user: "ayush" }));
+    // no need to wrap data in payload as it automatically gets wrapped in payload.
+    dispatch(userActions.login({ user: "ayush" }))
+    // you can call thunk directly.
+    dispatch((dispatch) => setTimeout(() => dispatch(userActions.logout()), 3000));
   }, [dispatch]);
 
   return (

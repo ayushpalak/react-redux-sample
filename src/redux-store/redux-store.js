@@ -17,7 +17,7 @@ const theme = (state = initialState, action) => {
 const user = (state = initialState, action) => {
   switch (action.type) {
     case "logout":
-      return { ...state, status: "logout", user: action?.payload?.user };
+      return { ...state, status: "logout", user: null };
     case "login":
       return { ...state, status: "logged in", user: action?.payload?.user };
     default:

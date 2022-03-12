@@ -1,4 +1,3 @@
-import { createStore } from "redux";
 import { createSlice, configureStore } from "@reduxjs/toolkit";
 
 const initialState = {};
@@ -22,6 +21,7 @@ const userSlice = createSlice({
   reducers: {
     logout: (state) => {
       state.status = "logout";
+      state.user = null;
     },
     login: (state, action) => {
       state.status = "loggedin";
